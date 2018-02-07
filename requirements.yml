@@ -1,0 +1,4 @@
+- name: openvpn
+  src: https://github.com/Stouts/Stouts.openvpn.git
+  scm: git
+  version: master

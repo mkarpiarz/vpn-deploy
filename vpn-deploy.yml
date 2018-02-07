@@ -1,0 +1,4 @@
+- hosts: '{{ target | default("all") }}'
+
+  roles:
+  - openvpn
