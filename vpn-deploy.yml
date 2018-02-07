@@ -2,3 +2,6 @@
 
   roles:
   - openvpn
+
+  vars:
+    openvpn_use_pam: no
