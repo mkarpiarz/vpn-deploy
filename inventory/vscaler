@@ -1,0 +1,5 @@
+[all]
+[bastions:children]
+
+[bastions]
+bastion0 ansible_host=185.93.31.71 ansible_user=ubuntu ansible_become=yes
