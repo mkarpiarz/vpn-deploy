@@ -5,3 +5,5 @@
 
   vars:
     openvpn_use_pam: no
+    openvpn_client_options:
+    - redirect-gateway autolocal
