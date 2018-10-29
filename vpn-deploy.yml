@@ -8,3 +8,19 @@
     openvpn_client_options:
     - redirect-gateway autolocal
     openvpn_host: "{{ ansible_host }}"
+
+    keys_out: ~/vScaler/VPN/
+
+  post_tasks:
+  - name: Fetch user keys and certificates
+    synchronize:
+      src: "{{ openvpn_keydir }}/{{ item }}"
+      dest: "{{ keys_out }}"
+      mode: pull
+    with_items:
+    - ca.crt
+    - client.crt
+    - client.key
+    - client.ovpn
+    tags:
+    - post-tasks
