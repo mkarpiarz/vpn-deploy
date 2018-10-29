@@ -12,6 +12,14 @@
     keys_out: ~/vScaler/VPN/
 
   post_tasks:
+  - name: Make sure OpenVPN is running
+    systemd:
+      name: openvpn@server
+      state: started
+      enabled: yes
+    tags:
+    - post-tasks
+
   - name: Fetch user keys and certificates
     synchronize:
       src: "{{ openvpn_keydir }}/{{ item }}"
