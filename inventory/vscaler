@@ -2,4 +2,4 @@
 [bastions:children]
 
 [bastions]
-185.93.31.71 ansible_user=ubuntu ansible_become=yes
+bastion ansible_host=185.93.31.71 ansible_user=ubuntu ansible_become=yes

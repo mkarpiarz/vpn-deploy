@@ -7,3 +7,4 @@
     openvpn_use_pam: no
     openvpn_client_options:
     - redirect-gateway autolocal
+    openvpn_host: "{{ ansible_host }}"
