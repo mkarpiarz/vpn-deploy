@@ -1,0 +1,22 @@
+== Prerequisites
+Confirmed working versions of Ansible:
+
+* 2.4
+
+== Usage
+First download roles:
+
+-------
+$ ansible-galaxy install -r requirements.yml
+-------
+Then run this playbook:
+
+-------
+$ ansible-playbook -i <your-inventory> vpn-deploy.yml -e 'target=<hosts-to-deploy-to>'
+-------
+The value of `target` can be either a group of hosts or an individual machine.
+
+[NOTE]
+=======
+This playbook will create a local directory in the path specified by the `keys_out` variable.
+=======
