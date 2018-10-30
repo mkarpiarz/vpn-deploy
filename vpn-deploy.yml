@@ -9,7 +9,7 @@
     - redirect-gateway autolocal
     openvpn_host: "{{ ansible_host }}"
 
-    keys_out: ~/vScaler/VPN/
+    keys_out: ~/VPN/
 
   post_tasks:
   - name: Make sure OpenVPN is running
