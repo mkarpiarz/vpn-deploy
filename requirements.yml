@@ -1,4 +1,4 @@
 - name: openvpn
-  src: https://github.com/Stouts/Stouts.openvpn.git
+  src: https://github.com/kyl191/ansible-role-openvpn
   scm: git
-  version: master
+  version: 5821e7a9ca1e326b8cd19edb0c1856902e841a04

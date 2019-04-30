@@ -7,28 +7,31 @@
     openvpn_use_pam: no
     openvpn_client_options:
     - redirect-gateway autolocal
-    openvpn_host: "{{ ansible_host }}"
+    openvpn_server_hostname: "{{ ansible_host }}"
+    clients:
+    - client
+    openvpn_dualstack: false
 
     keys_out: ~/VPN/
 
   post_tasks:
-  - name: Make sure OpenVPN is running
-    systemd:
-      name: openvpn@server
-      state: started
-      enabled: yes
-    tags:
-    - post-tasks
+#  - name: Make sure OpenVPN is running
+#    systemd:
+#      name: openvpn@server
+#      state: started
+#      enabled: yes
+#    tags:
+#    - post-tasks
 
   - name: Fetch user keys and certificates
     synchronize:
-      src: "{{ openvpn_keydir }}/{{ item }}"
+      src: "{{ openvpn_key_dir }}/{{ item }}"
       dest: "{{ keys_out }}"
       mode: pull
     with_items:
     - ca.crt
     - client.crt
     - client.key
-    - client.ovpn
+    - "../client-{{inventory_hostname}}.ovpn"
     tags:
     - post-tasks
