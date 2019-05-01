@@ -15,13 +15,13 @@
     keys_out: ~/VPN/
 
   post_tasks:
-#  - name: Make sure OpenVPN is running
-#    systemd:
-#      name: openvpn@server
-#      state: started
-#      enabled: yes
-#    tags:
-#    - post-tasks
+  - name: Make sure OpenVPN is running
+    systemd:
+      name: "openvpn@openvpn_{{openvpn_proto}}_{{openvpn_port}}"
+      state: started
+      enabled: yes
+    tags:
+    - post-tasks
 
   - name: Fetch user keys and certificates
     synchronize:
