@@ -11,6 +11,8 @@
     clients:
     - client
     openvpn_dualstack: false
+    # Disable 'register-dns' as it only works on Windows
+    openvpn_client_register_dns: false
 
     keys_out: ~/VPN/
 
