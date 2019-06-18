@@ -13,6 +13,9 @@
     openvpn_dualstack: false
     # Disable 'register-dns' as it only works on Windows
     openvpn_client_register_dns: false
+    # Don't let the role control iptables as this causes issues
+    # in cloud environments
+    manage_firewall_rules: false
 
     keys_out: ~/VPN/
 
