@@ -16,6 +16,8 @@
     manage_firewall_rules: false
     openvpn_redirect_gateway: true
     openvpn_server_network: 10.8.0.0
+    # Don't set the "compress" parameter (for compatibility with openvpn 2.3)
+    openvpn_compression:
 
     keys_out: ~/VPN/
 
